@@ -6,10 +6,7 @@
       <AddTask />
       <br />
       <div class="overflow-auto task-list mt-3">
-        <Task />
-        <Task />
-        <Task />
-        <Task />
+        <Task :task="task" :key="task.id" v-for="task in tasks" />
       </div>
       <br />
       <About />
@@ -27,6 +24,7 @@ import About from "../components/About";
 export default {
   name: "TaskBoard",
   components: { NavBar, Header, AddTask, Task, About },
+  props: { tasks: Array },
 };
 </script>
 

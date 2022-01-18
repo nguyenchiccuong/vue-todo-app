@@ -21,15 +21,6 @@
       />
     </div>
     <div class="mb-3">
-      <label class="form-label">Task description</label>
-      <input
-        type="text"
-        class="form-control"
-        aria-describedby="Task description"
-        placeholder="Task description"
-      />
-    </div>
-    <div class="mb-3">
       <label class="form-label">Date & time</label>
       <input
         type="datetime-local"
