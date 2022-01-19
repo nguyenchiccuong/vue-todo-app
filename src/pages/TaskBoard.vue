@@ -6,7 +6,13 @@
       <AddTask />
       <br />
       <div class="overflow-auto task-list mt-3">
-        <Task :task="task" :key="task.id" v-for="task in tasks" />
+        <Task
+          :task="task"
+          :key="task.id"
+          v-for="task in tasks"
+          @toogleTask="$emit('toogleTask', task.id)"
+          @deleteTask="$emit('deleteTask', task.id)"
+        />
       </div>
       <br />
       <About />
@@ -25,6 +31,7 @@ export default {
   name: "TaskBoard",
   components: { NavBar, Header, AddTask, Task, About },
   props: { tasks: Array },
+  emits: ["toogleTask", "deleteTask"],
 };
 </script>
 

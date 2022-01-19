@@ -1,5 +1,5 @@
 <template>
-  <TaskBoard :tasks="tasks" />
+  <TaskBoard :tasks="tasks" @toogleTask="toogleTask" @deleteTask="deleteTask" />
 </template>
 
 <script>
