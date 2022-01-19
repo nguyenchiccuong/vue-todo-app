@@ -13,7 +13,8 @@
       <p class="card-text">
         {{ task.day }}
       </p>
-      <button type="submit" class="btn btn-primary">Edit</button>
+      <!-- <button type="submit" class="btn btn-primary">Edit</button> -->
+      <AddTask />
       <button
         type="submit"
         class="btn btn-danger float-end"
@@ -26,9 +27,12 @@
 </template>
 
 <script>
+import AddTask from "../components/EditTask";
+
 export default {
   name: "Task",
   props: ["task"],
+  components: { AddTask },
   methods: {
     handleDbClick(id) {
       this.$emit("toogleTask", id);
