@@ -3,7 +3,7 @@
   <div class="d-flex justify-content-center mt-5 mb-5">
     <div class="p-4 w-50 rounded rounded-3 border border-secondary">
       <Header />
-      <AddTask />
+      <AddTask @addTask="handleAddTask" />
       <br />
       <div class="overflow-auto task-list mt-3">
         <Task
@@ -31,7 +31,12 @@ export default {
   name: "TaskBoard",
   components: { NavBar, Header, AddTask, Task, About },
   props: { tasks: Array },
-  emits: ["toogleTask", "deleteTask"],
+  emits: ["toogleTask", "deleteTask", "addTask"],
+  methods: {
+    handleAddTask(newTask) {
+      this.$emit("addTask", newTask);
+    },
+  },
 };
 </script>
 
