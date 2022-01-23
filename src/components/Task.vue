@@ -38,7 +38,7 @@ export default {
       this.$emit("toogleTask", id);
     },
   },
-  emits: ["deleteTask"],
+  emits: ["deleteTask", "toogleTask"],
 };
 </script>
 

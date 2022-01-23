@@ -92,6 +92,7 @@ export default {
         }, 2000);
         return;
       }
+      this.$router.push({ path: 'taskboard' })
     },
     showPass() {
       this.passInputType = "text";
