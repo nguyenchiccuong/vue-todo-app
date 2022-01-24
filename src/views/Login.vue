@@ -92,7 +92,15 @@ export default {
         }, 2000);
         return;
       }
-      this.$router.push({ path: 'taskboard' })
+      this.$store.dispatch("addUser", {
+        account: this.account,
+        pass: this.pass,
+      });
+      this.$cookies.set("user", {
+        account: this.account,
+        pass: this.pass,
+      });
+      this.$router.push({ path: "taskboard" });
     },
     showPass() {
       this.passInputType = "text";
@@ -100,6 +108,14 @@ export default {
     hidePass() {
       this.passInputType = "password";
     },
+  },
+  computed: {
+    user() {
+      return this.$store.getters.getUser;
+    },
+  },
+  created() {
+    console.log(this.$store.getters.getUser);
   },
 };
 </script>

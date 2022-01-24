@@ -13,10 +13,12 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          User name
+          {{ user.length > 0 ? user[0].account : "" }}
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Log out</a></li>
+          <li>
+            <a class="dropdown-item" href="#" @click="handleLogOut">Log out</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -26,6 +28,17 @@
 <script>
 export default {
   name: "NavBar",
+  computed: {
+    user() {
+      return this.$store.getters.getUser;
+    },
+  },
+  methods: {
+    handleLogOut() {
+      this.$router.push({ path: "/" });
+      this.$store.dispatch("clear", {});
+    },
+  },
 };
 </script>
 
