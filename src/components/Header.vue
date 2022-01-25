@@ -1,11 +1,10 @@
 <template>
-  <router-view />
+  <h3>Task list</h3>
 </template>
 
 <script>
-
 export default {
-  name: "App",
+  name: "Header",
 };
 </script>
 
